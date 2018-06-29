@@ -2,8 +2,8 @@ package main
 
 import (
 	"bufio"
-	"os"
 	"fmt"
+	"os"
 )
 
 func main() {
@@ -12,11 +12,11 @@ func main() {
 	if len(files) == 0 {
 		countLines(os.Stdin, counts)
 	} else {
-		for _, filePath := range files{
+		for _, filePath := range files {
 			f, err := os.Open(filePath)
-			if err != nil{
+			if err != nil {
 				fmt.Fprintf(os.Stderr, "dup2: %v\n", err)
-			}else{
+			} else {
 				countLines(f, counts)
 			}
 			f.Close()
